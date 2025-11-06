@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apostates & Religious Critics Directory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #ec3899;
+      --color-primary-dark: #db2777; 
+      --color-secondary: #10b981;
+      --color-secondary-dark: #059669;
+      --color-shadow-light: rgba(0, 0, 0, 0.1);
+      --color-shadow-dark: rgba(0, 0, 0, 0.5);
+      --bg-dark: #0a1121;
+      --bg-surface-dark: #121f3d;
+      --text-dark: #f8f9fa;
+      --border-dark: #374151;
+      --bg-light: #ffffff;
+      --bg-surface-light: #f3f4f6;
+      --text-light: #1f2937;
+      --border-light: #d1d5db;
+      --new-badge: #ff073a; 
+      --new-shadow: rgba(255, 7, 58, 0.6);
+      /* NEW STAT COLORS */
+      --color-stat-brilliant: #42f4e8; /* Bright Cyan */
+      --color-stat-shadow: rgba(66, 244, 232, 0.2); /* Reduced glow */
+      /* NEW IMPORTANT NOTE COLOR */
+      --color-note-highlight: #42f4e8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      transition: background 0.7s cubic-bezier(0.23, 1, 0.32, 1), color 0.7s cubic-bezier(0.23, 1, 0.32, 1); 
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth; 
+    }
+
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--bg-surface-dark);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dark);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px var(--color-shadow-dark);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.light-mode nav {
+      background: var(--bg-surface-light);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 15px var(--color-shadow-light);
+    }
+
+    .nav-logo {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1;
+    }
+    
+    .logo-main {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem; /* Increased gap */
+        font-weight: 900;
+        font-size: 2rem; /* Increased size */
+        margin-bottom: 0.3rem;
+    }
+
+    .logo-icon {
+        font-size: 2.8rem; /* Increased size */
+        color: var(--color-primary); 
+        transition: transform 0.4s ease;
+    }
+    
+    .logo-main:hover .logo-icon {
+        transform: rotateY(15deg) scale(1.05);
+    }
+
+    .logo-text {
+        background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s ease;
+    }
+    
+    .logo-catchy-phrases {
+        font-size: 1rem; /* Increased size */
+        font-weight: 700;
+        opacity: 1; 
+        margin-top: 0.2rem; /* Adjusted spacing */
+        margin-bottom: 0.4rem;
+        padding-left: 3.6rem; /* Adjusted for icon size */
+        color: #e5e7eb;
+    }
+    
+    body.light-mode .logo-catchy-phrases {
+        color: #374151;
+    }
+
+    .logo-motto {
+        font-size: 0.9rem; /* Increased size */
+        font-weight: 500;
+        opacity: 1; 
+        padding-left: 3.6rem; /* Adjusted for icon size */
+        color: #9ca3af;
+        white-space: pre-wrap;
+    }
+
+    body.light-mode .logo-motto {
+        color: #4b5563; 
+    }
+
+    #theme-toggle {
+      width: 45px;
+      height: 45px;
+      border: 2px solid var(--border-dark);
+      background: var(--bg-surface-dark);
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.3rem;
+      transition: all 0.2s ease-in-out; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+    }
+    
+    body.light-mode #theme-toggle {
+        border: 2px solid var(--border-light);
+        background: var(--bg-surface-light);
+    }
+
+    #theme-toggle:focus {
+        box-shadow: 0 0 0 4px var(--color-primary-dark);
+    }
+
+    #theme-toggle #theme-icon {
+        color: var(--color-secondary); 
+        font-size: 1.25rem;
+        transition: color 0.4s ease;
+    }
+    
+    body.light-mode #theme-toggle #theme-icon {
+        color: var(--color-primary); 
+    }
+
+    #theme-toggle:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+    
+    .homepage {
+      min-height: calc(100vh - 85px); 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #0a1121 0%, #3d0e33 100%); 
+      position: relative;
+      overflow: hidden;
+      color: var(--text-dark);
+      transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    body.light-mode .homepage {
+        background: linear-gradient(135deg, var(--bg-light) 0%, #fef2f2 100%); 
+        color: var(--text-light);
+    }
+    
+    .homepage-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      text-align: center;
+      padding: 2.5rem;
+      border-radius: 25px;
+      background: var(--bg-surface-dark); 
+      border: 1px solid var(--border-dark);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 40px var(--color-shadow-dark);
+      transition: all 0.5s ease;
+      will-change: transform; 
+    }
+
+    body.light-mode .homepage-content {
+        background: var(--bg-surface-light);
+        border: 1px solid var(--border-light);
+        box-shadow: 0 20px 40px var(--color-shadow-light);
+    }
+
+    .homepage-content h1 {
+      font-size: 3rem; 
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shine 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 40px rgba(255, 215, 0, 0.5));
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    
+    body.light-mode .homepage-content h1 {
+      background: linear-gradient(135deg, #d4af37 0%, #ffb800 50%, #d4af37 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shine 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.7)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+    }
+    
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .homepage-content .subtitle {
+        font-size: 1.5rem; 
+        font-weight: 300;
+        opacity: 0.9;
+        margin-bottom: 2rem; 
+        color: var(--text-dark);
+    }
+    
+    /* ADDED to style main description paragraph */
+    .homepage-content .subtitle + p {
+        font-size: 1.1rem;
+        max-width: 750px;
+        margin: 0 auto 2.5rem auto;
+        opacity: 0.9;
+        line-height: 1.7;
+    }
+    
+    body.light-mode .homepage-content .subtitle {
+        color: var(--text-light);
+    }
+    
+    .homepage-content .mission-box {
+        border-left: 5px solid var(--color-secondary); 
+        padding: 1.5rem 2rem; 
+        margin: 2.5rem 0; 
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        text-align: left; 
+    }
+
+    /* ADDED */
+    .homepage-content .mission-box h2 {
+        font-size: 1.3rem;
+        color: var(--color-secondary);
+        margin-bottom: 0.75rem;
+    }
+    
+    /* ADDED */
+    .homepage-content .mission-box p {
+        font-size: 1rem;
+        opacity: 0.95;
+    }
+    
+    body.light-mode .homepage-content .mission-box {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem 3rem;
+      background: var(--color-primary); 
+      color: var(--bg-dark); 
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+      box-shadow: 0 10px 25px rgba(236, 72, 153, 0.5); 
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    
+    .cta-button:active::after {
+        transform: translate(-50%, -50%) scale(15);
+        opacity: 1;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px) scale(1.02); 
+      background: var(--color-primary-dark);
+      box-shadow: 0 18px 40px rgba(236, 72, 153, 0.7); 
+      color: white;
+    }
+    
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem; 
+      margin-top: 3rem; 
+      margin-bottom: 3rem;
+    }
+    
+    .stat-box {
+        flex: 1; 
+        flex-basis: 0; 
+        min-width: 150px; 
+        background: rgba(255, 255, 255, 0.05); 
+        padding: 1.5rem; 
+        border-radius: 15px; 
+        border: 1px solid var(--border-dark); 
+        transition: all 0.3s ease; 
+        text-align: center; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-box:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-stat-brilliant); /* Updated hover border */
+        box-shadow: 0 5px 15px var(--color-stat-shadow); /* Reduced hover shadow */
+    }
+    
+    body.light-mode .stat-box {
+        background: rgba(0, 0, 0, 0.02);
+        border: 1px solid var(--border-light);
+    }
+    
+    body.light-mode .stat-box:hover {
+        border-color: var(--color-stat-brilliant);
+        box-shadow: 0 5px 10px rgba(66, 244, 232, 0.1); /* Reduced shadow for light mode */
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--color-stat-brilliant); /* New brilliant color */
+        margin-bottom: 0.25rem; 
+        /* Reduced Brilliant Glow Effect */
+        text-shadow: 
+            0 0 5px var(--color-stat-shadow),
+            0 0 10px var(--color-stat-shadow);
+    }
+    
+    body.light-mode .stat-number {
+        color: var(--color-stat-brilliant);
+        text-shadow: 
+            0 0 5px rgba(0, 0, 0, 0.1), /* Subtle dark shadow for contrast on light BG */
+            0 0 10px rgba(66, 244, 232, 0.1); /* Reduced light shadow */
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-top: 0.2rem;
+    }
+
+    .content-section {
+        display: none; 
+        padding: 2rem 2rem 5rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        min-height: 100vh;
+    }
+    
+    .content-section.active {
+        display: block; 
+    }
+    
+    .section-container {
+      background: var(--bg-surface-dark);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid var(--border-dark);
+      box-shadow: 0 8px 25px var(--color-shadow-dark);
+      transition: all 0.3s ease;
+    }
+
+    body.light-mode .section-container {
+      background: var(--bg-surface-light);
+      border: 1px solid var(--border-light); 
+      box-shadow: 0 5px 15px var(--color-shadow-light);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 3px solid var(--color-primary); 
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .section-icon {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+      color: var(--color-primary); 
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .section-description {
+        opacity: 0.8;
+        margin-bottom: 2rem;
+    }
+
+    .creators-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .creator-card {
+      background: var(--bg-surface-dark);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.15), inset 0 1px 0 rgba(255, 215, 0, 0.1);
+      padding: 1.5rem;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      will-change: transform; 
+    }
+    
+    body.light-mode .creator-card {
+        background: var(--bg-surface-light);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2), inset 0 1px 0 rgba(212, 175, 55, 0.1);
+    }
+
+    .creator-card:hover {
+      border-color: rgba(255, 215, 0, 0.7);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.3);
+      transform: translateY(-5px);
+    }
+
+    body.light-mode .creator-card:hover {
+      border-color: rgba(212, 175, 55, 0.6);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4), 0 0 25px rgba(212, 175, 55, 0.2);
+    }
+    
+    /* NEW CSS to place badge next to name */
+    .creator-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem; /* Space before language/description */
+    }
+
+    .creator-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      /* margin-bottom: 0.5rem; REMOVED */
+      line-height: 1.2;
+    }
+    
+    body.light-mode .creator-name {
+        color: var(--text-light);
+    }
+
+    .creator-language {
+      font-size: 0.8rem;
+      font-weight: 500;
+      opacity: 0.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .creator-description {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
+
+    .creator-badge {
+      /* REMOVED absolute positioning */
+      /* position: absolute;
+      top: 15px;
+      right: 15px; */
+      display: inline-block;
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+      background-size: 200% 200%;
+      color: #000;
+      padding: 0.35rem 0.9rem;
+      border-radius: 15px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
+      z-index: 10;
+      animation: shine 3s ease-in-out infinite;
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      
+      /* ADDED for new positioning */
+      flex-shrink: 0;
+      margin-left: 0.5rem;
+    }
+
+    .new-creator-badge {
+      background: var(--new-badge); 
+      box-shadow: 0 2px 15px var(--new-shadow);
+      animation: pulse-new 1.5s infinite; 
+    }
+    
+    @keyframes pulse-new {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 7, 58, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 7, 58, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 7, 58, 0); }
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Adjusted Disclaimer Box for Important Note */
+    .disclaimer-box {
+        background: var(--bg-surface-dark); /* Dark surface background */
+        color: var(--text-dark); /* Default text color */
+        padding: 2rem; /* Increased padding */
+        border-radius: 15px; /* Softer corners */
+        margin: 2rem 0 1.5rem 0;
+        border: 2px solid var(--color-note-highlight); /* Highlight border */
+        box-shadow: 0 0 20px var(--color-stat-shadow); /* Subtle cyan glow */
+        display: flex;
+        gap: 1.5rem; /* Increased gap */
+        align-items: flex-start;
+        font-size: 1.1rem; /* Increased size */
+    }
+    
+    body.light-mode .disclaimer-box {
+        background: var(--bg-surface-light);
+        color: var(--text-light);
+        border: 2px solid var(--color-note-highlight);
+        box-shadow: 0 0 15px rgba(66, 244, 232, 0.4); /* Lighter cyan glow */
+    }
+
+    .disclaimer-box span {
+        font-size: 2rem; /* Increased size for the icon */
+        line-height: 1;
+        color: var(--color-note-highlight); /* Cyan icon color */
+        filter: drop-shadow(0 0 5px var(--color-stat-shadow)); /* Glow on icon */
+    }
+    
+    .disclaimer-box p {
+        font-size: 1.1rem; /* Consistent large text */
+        font-weight: 500;
+    }
+
+    .disclaimer-box strong {
+        color: var(--color-note-highlight); /* Highlighted strong text */
+        font-weight: 800;
+        text-shadow: 0 0 5px var(--color-stat-shadow);
+    }
+
+    /* NEW CSS for instruction text */
+    .click-instruction {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+        margin: 0 0 2.5rem 0;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid var(--color-primary);
+        border-radius: 10px;
+        background: rgba(236, 56, 153, 0.1); /* Subtle background glow */
+        color: var(--text-dark);
+        box-shadow: 0 0 10px rgba(236, 56, 153, 0.4);
+    }
+    
+    body.light-mode .click-instruction {
+        color: var(--text-light);
+        background: rgba(236, 56, 153, 0.05);
+        box-shadow: 0 0 5px rgba(236, 56, 153, 0.2);
+    }
+    
+    .back-to-home-button {
+        position: fixed;
+        top: 85px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+        background: var(--bg-surface-dark);
+        border: 2px solid var(--border-dark);
+        border-radius: 12px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: none; /* Hidden by default on large screens */
+        align-items: center;
+        justify-content: center;
+        z-index: 998;
+        box-shadow: 0 4px 12px var(--color-shadow-dark);
+    }
+    
+    body.light-mode .back-to-home-button {
+        background: var(--bg-surface-light);
+        border: 2px solid var(--border-light);
+        box-shadow: 0 4px 12px var(--color-shadow-light);
+    }
+
+    .back-to-home-button:hover {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        transform: translateX(-3px);
+        box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+    }
+    
+    /* Removed ::before to remove the arrow, but kept the button display logic */
+    .back-to-home-button::before {
+        content: '🏠'; /* Changed from '←' to '🏠' for home icon */
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        transition: color 0.3s ease;
+    }
+    
+    body.light-mode .back-to-home-button::before {
+        color: var(--text-light);
+    }
+    
+    .back-to-home-button:hover::before {
+        color: white;
+    }
+
+    /* REMOVED: .content-section.active .back-to-home-button { display: flex; } */
+    
+    /* Glassmorphism Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      /* Glassmorphism Style */
+      background: rgba(16, 185, 129, 0.2); /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Blur effect */
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle light border */
+      color: var(--color-secondary);
+      border-radius: 50%;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Stronger shadow */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.3s ease;
+      z-index: 999;
+    }
+    
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    #back-to-top:hover {
+        background: rgba(16, 185, 129, 0.4); /* Slightly less transparent on hover */
+        transform: translateY(-5px) scale(1.05);
+        color: white; /* White arrow on hover */
+    }
+
+    @media (max-width: 768px) {
+        .logo-motto {
+            font-size: 0.8rem; 
+            padding-left: 3rem; 
+        }
+        .logo-catchy-phrases {
+            font-size: 0.9rem; 
+            padding-left: 3rem;
+        }
+        .logo-main {
+            font-size: 1.6rem;
+            gap: 0.6rem;
+        }
+        .logo-icon {
+            font-size: 2.2rem;
+        }
+        .homepage-content h1 {
+            font-size: 2rem;
+        }
+        .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+        .stats-container {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        /* ADDED: Show the button only on mobile when content is active */
+        .content-section.active .back-to-home-button {
+            display: flex;
+        }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo" onclick="goToHomepage()">
+        <div class="logo-main">
+            <span class="logo-icon">📖</span>
+            <span class="logo-text">Apostate Directory</span>
+        </div>
+        <div class="logo-catchy-phrases">
+            **The Critical, Thinking Logic**
+        </div>
+        <div class="logo-motto">
+            Religious Analysis · Free Thinker · Rational Discourse
+        </div>
+    </div>
+    <button id="theme-toggle">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+
+  <section class="homepage" id="homepage">
+    <div class="homepage-content">
+      <h1>🌍 Voices of Reason & Critical Thought</h1>
+      <p class="subtitle">Empowering Free Inquiry & Rational Discourse</p>
+      <p> 
+        Welcome to the most comprehensive directory of content creators who champion free thought, critical analysis, and intellectual honesty in discussions about religion, philosophy, and belief systems.
+      </p>
+
+      <div class="mission-box">
+        <h2>Our Mission</h2>
+        <p>
+          This platform exists to connect **truth-seekers** with diverse voices who courageously challenge dogma, promote rational inquiry, and support those questioning their faith. Whether you're exploring doubts, seeking scholarly critiques, or simply interested in philosophical discourse, you'll find creators speaking in multiple languages from around the globe.
+        </p>
+      </div>
+
+      <div class="stats-container">
+        <div class="stat-box">
+          <span class="stat-number">70+</span>
+          <span class="stat-label">Content Creators</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">Languages</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">3</span> 
+          <span class="stat-label">Categories</span>
+        </div>
+      </div>
+
+      <button class="cta-button" onclick="goToContent()">
+        🚀 Explore Content Creators
+      </button>
+    </div>
+  </section>
+
+  <div class="content-section" id="content">
+    <button class="back-to-home-button" onclick="goToHomepage()" aria-label="Back to home"></button>
+    <main>
+      <div class="disclaimer-box">
+        <span>⚠️</span>
+        <p>
+          **Important Note:** Although these creators produce insightful and valuable videos, we don't support each and every view of these creators, we highly encourage all viewers to practice **intellectual independence** and **verify the primary sources** (texts, citations, historical documents) they mention for themselves. Critical thinking starts with self-research.
+        </p>
+      </div>
+
+      <p class="click-instruction">
+        **Click any Creator Card** to instantly visit their respective YouTube channel and explore their content!
+      </p>
+
+      <!-- Sections will be dynamically loaded here -->
+      <div id="sections-container"></div>
+    </main>
+
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+    const homepage = document.getElementById('homepage');
+    const content = document.getElementById('content');
+    const navLogo = document.querySelector('.nav-logo');
+    
+    let isDarkMode = true; 
+
+    function initializeTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light-mode') {
+            isDarkMode = false;
+            body.classList.add('light-mode');
+            themeIcon.textContent = '☀️';
+        } else {
+            isDarkMode = true;
+            themeIcon.textContent = '🌙';
+        }
+    }
+
+    function toggleTheme() {
+      isDarkMode = !isDarkMode;
+      body.classList.toggle('light-mode');
+      
+      if (isDarkMode) {
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark-mode');
+      } else {
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'light-mode');
+      }
+    }
+    
+    themeToggle.addEventListener('click', toggleTheme);
+    navLogo.addEventListener('click', () => renderView('home', true));
+
+    function renderView(viewId, pushHistory = false) {
+        if (viewId === 'content') {
+            homepage.style.display = 'none';
+            content.classList.add('active');
+            if (pushHistory) {
+                history.pushState({ view: 'content' }, 'Content Creators', '#content');
+            }
+        } else {
+            content.classList.remove('active');
+            homepage.style.display = 'flex'; 
+            if (pushHistory) {
+                history.pushState({ view: 'home' }, 'Apostate Directory', '/');
+            } else if (window.location.hash === '#content' && !event.state) {
+                history.replaceState({ view: 'home' }, 'Apostate Directory', '/');
+            }
+        }
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToContent() {
+        renderView('content', true);
+    }
+
+    function goToHomepage() {
+        renderView('home', true);
+    }
+
+    window.onpopstate = function(event) {
+        const viewToRender = event.state && event.state.view ? event.state.view : 'home';
+        renderView(viewToRender, false);
+    };
+
+    const backToTopButton = document.getElementById('back-to-top');
+
+    let isTicking = false;
+    function checkScroll() {
+        if (window.pageYOffset > 300 && content.classList.contains('active')) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+        isTicking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (!isTicking) {
+            window.requestAnimationFrame(checkScroll);
+            isTicking = true;
+        }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // NEW: Load creators data from JSON
+    async function loadCreatorsData() {
+      try {
+        const response = await fetch('./data/creators.json');
+        const data = await response.json();
+        renderCreators(data);
+        updateStats(data);
+      } catch (error) {
+        console.error('Error loading creators data:', error);
+        // Fallback to hardcoded data if needed
+        loadFallbackData();
+      }
+    }
+
+    function renderCreators(data) {
+      const container = document.getElementById('sections-container');
+      if (!container) return;
+      
+      container.innerHTML = '';
+      
+      data.categories.forEach(category => {
+        const categoryCreators = data.creators.filter(creator => creator.category === category.id);
+        
+        const sectionHTML = `
+          <section id="${category.id}" class="section-container">
+            <div class="section-header">
+              <span class="section-icon">${category.icon}</span>
+              <h2 class="section-title">${category.title}</h2>
+            </div>
+            <p class="section-description">${category.description}</p>
+            <div class="creators-grid" id="${category.id}-grid">
+              ${categoryCreators.map(creator => `
+                <a href="${creator.link}" target="_blank">
+                  <div class="creator-card">
+                    <div class="creator-header">
+                      <div class="creator-name">${creator.name}</div>
+                      ${creator.badge ? `<span class="creator-badge ${creator.new ? 'new-creator-badge' : ''}">${creator.badge}</span>` : ''}
+                    </div>
+                    <div class="creator-language">${creator.language}</div>
+                    <div class="creator-description">${creator.description}</div>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+          </section>
+        `;
+        
+        container.innerHTML += sectionHTML;
+      });
+    }
+
+    function updateStats(data) {
+      const totalCreators = data.creators.length;
+      const languages = [...new Set(data.creators.map(c => c.language))].length;
+      
+      // Update the stats in the homepage
+      document.querySelectorAll('.stat-number')[0].textContent = totalCreators + '+';
+      document.querySelectorAll('.stat-number')[1].textContent = languages + '+';
+    }
+
+    // Fallback data if JSON fails to load
+    function loadFallbackData() {
+      const fallbackData = {
+        categories: [
+          {
+            "id": "ex-muslim",
+            "title": "Ex-Muslim Voices and Islamic Critics",
+            "icon": "🗣️",
+            "description": "Former Muslims courageously sharing their deconversion journeys, critical analyses of Islamic theology, and providing invaluable support for those questioning their faith. These creators offer personal testimonies, scholarly research, and compassionate communities."
+          },
+          {
+            "id": "christian",
+            "title": "Christian Apologists / Critics of Islam",
+            "icon": "✝️",
+            "description": "Christian content creators engaging in apologetics and comparative religious analysis. These channels provide Christian perspectives on Islamic theology through debates, textual criticism, and interfaith discussions, **These can be BIASED at times**."
+          },
+          {
+            "id": "atheist",
+            "title": "Atheist & Philosophy Channels",
+            "icon": "🧠",
+            "description": "Channels championing secular humanism, philosophical inquiry, and scientific skepticism. These creators promote rational thinking, evidence-based reasoning, and critical examination of all religious claims."
+          }
+        ],
+        creators: [
+          {
+            "id": "apostate-aladdin",
+            "category": "ex-muslim",
+            "name": "Apostate Aladdin",
+            "language": "🇬🇧 English",
+            "description": "Engaging debates, Islamic critiques, and ex-Muslim advocacy with humor and sharp, calm analysis.",
+            "link": "https://youtube.com/@apostatealaddin",
+            "badge": "GOATED",
+            "new": false
+          }
+          // Add more fallback creators if needed
+        ]
+      };
+      
+      renderCreators(fallbackData);
+      updateStats(fallbackData);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeTheme();
+        
+        // Load creators data
+        if (document.getElementById('sections-container')) {
+          loadCreatorsData();
+        }
+        
+        if (window.location.hash === '#content') {
+            renderView('content', false);
+        } else {
+            renderView('home', false);
+        }
+    });
+  </script>
+</body>
+  </html>
