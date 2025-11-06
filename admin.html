@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directory CMS - Admin Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    
+    body { 
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #0a1121;
+      color: #f8f9fa;
+      line-height: 1.6;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background: #121f3d;
+      border-radius: 15px;
+      border: 1px solid #374151;
+    }
+    
+    h1 {
+      color: #ec3899;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      color: #9ca3af;
+      font-size: 1.2rem;
+    }
+    
+    .admin-nav {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+    
+    .nav-btn {
+      padding: 0.8rem 1.5rem;
+      background: #121f3d;
+      border: 1px solid #374151;
+      color: #f8f9fa;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-btn.active {
+      background: #ec3899;
+      border-color: #ec3899;
+    }
+    
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(236, 56, 153, 0.4);
+    }
+    
+    .card { 
+      background: #121f3d; 
+      padding: 2rem; 
+      margin: 1rem 0; 
+      border-radius: 15px; 
+      border: 1px solid #374151;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+    
+    input, textarea, select { 
+      width: 100%; 
+      padding: 12px; 
+      margin: 5px 0; 
+      background: #1e293b;
+      border: 1px solid #374151; 
+      border-radius: 8px; 
+      color: #f8f9fa;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #ec3899;
+      box-shadow: 0 0 0 3px rgba(236, 56, 153, 0.3);
+    }
+    
+    button { 
+      background: #ec3899; 
+      color: white; 
+      border: none; 
+      padding: 12px 24px; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      margin: 5px; 
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    button:hover {
+      background: #db2777;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(236, 56, 153, 0.4);
+    }
+    
+    button.secondary {
+      background: #374151;
+    }
+    
+    button.secondary:hover {
+      background: #4b5563;
+    }
+    
+    .creator-list { 
+      max-height: 500px; 
+      overflow-y: auto;
+      padding: 1rem;
+      background: #1e293b;
+      border-radius: 8px;
+      border: 1px solid #374151;
+    }
+    
+    .creator-item {
+      background: #121f3d;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      border: 1px solid #374151;
+      transition: all 0.3s ease;
+    }
+    
+    .creator-item:hover {
+      border-color: #ec3899;
+      transform: translateY(-2px);
+    }
+    
+    .creator-header {
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .creator-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f8f9fa;
+    }
+    
+    .creator-category {
+      display: inline-block;
+      background: #ec3899;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-left: 1rem;
+    }
+    
+    .creator-badge {
+      display: inline-block;
+      background: #FFD700;
+      color: #000;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      margin-left: 0.5rem;
+    }
+    
+    .new-badge {
+      background: #ff073a;
+      color: white;
+    }
+    
+    .hidden { 
+      display: none; 
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .json-output {
+      width: 100%;
+      height: 300px;
+      background: #1e293b;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      padding: 1rem;
+      color: #f8f9fa;
+      font-family: monospace;
+      resize: vertical;
+    }
+    
+    .success-message {
+      background: #10b981;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .admin-nav {
+        flex-direction: column;
+      }
+      
+      .actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📖 Apostate Directory CMS</h1>
+      <p class="subtitle">Manage your content creators easily</p>
+    </header>
+
+    <div class="admin-nav">
+      <button class="nav-btn active" onclick="showTab('add-creator')">Add Creator</button>
+      <button class="nav-btn" onclick="showTab('manage-creators')">Manage Creators</button>
+      <button class="nav-btn" onclick="showTab('export-data')">Export Data</button>
+    </div>
+
+    <div id="success-message" class="success-message">
+      ✅ Operation completed successfully!
+    </div>
+
+    <!-- Add Creator Tab -->
+    <div id="add-creator" class="tab-content active">
+      <div class="card">
+        <h2>Add New Creator</h2>
+        <form id="creator-form">
+          <div class="form-group">
+            <label for="name">Creator Name *</label>
+            <input type="text" id="name" placeholder="e.g., Apostate Aladdin" required>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category *</label>
+            <select id="category" required>
+              <option value="">Select Category</option>
+              <option value="ex-muslim">Ex-Muslim Voices and Islamic Critics</option>
+              <option value="christian">Christian Apologists / Critics of Islam</option>
+              <option value="atheist">Atheist & Philosophy Channels</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="language">Language *</label>
+            <input type="text" id="language" placeholder="e.g., 🇬🇧 English" required>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description *</label>
+            <textarea id="description" placeholder="Creator description..." rows="3" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="link">YouTube URL *</label>
+            <input type="url" id="link" placeholder="https://youtube.com/@username" required>
+          </div>
+
+          <div class="form-group">
+            <label for="badge">Badge Type</label>
+            <select id="badge">
+              <option value="">No Badge</option>
+              <option value="GOATED">GOATED</option>
+              <option value="NEW">NEW</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="isNew"> Mark as New Creator
+            </label>
+          </div>
+
+          <button type="submit">➕ Add Creator</button>
+          <button type="button" class="secondary" onclick="clearForm()">Clear Form</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Manage Creators Tab -->
+    <div id="manage-creators" class="tab-content">
+      <div class="card">
+        <h2>Current Creators</h2>
+        <div class="creator-list" id="creator-list">
+          <!-- Creators will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Export Data Tab -->
+    <div id="export-data" class="tab-content">
+      <div class="card">
+        <h2>Export Data</h2>
+        <p>Copy this JSON and paste it into your <code>data/creators.json</code> file:</p>
+        <textarea class="json-output" id="json-output" readonly></textarea>
+        <div class="actions">
+          <button onclick="copyToClipboard()">📋 Copy JSON to Clipboard</button>
+          <button onclick="downloadJSON()">💾 Download JSON File</button>
+          <button onclick="importFromJSON()" class="secondary">📤 Import from JSON</button>
+        </div>
+        
+        <div class="form-group" style="margin-top: 2rem;">
+          <label for="json-import">Import JSON Data</label>
+          <textarea id="json-import" placeholder="Paste your JSON data here..." rows="6"></textarea>
+          <button onclick="loadImportedJSON()">Load Imported Data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let creators = [];
+    let editingId = null;
+
+    // Initialize the CMS
+    function initCMS() {
+      loadData();
+      showTab('add-creator');
+    }
+
+    // Load data from localStorage
+    function loadData() {
+      const saved = localStorage.getItem('apostateDirectoryData');
+      if (saved) {
+        try {
+          creators = JSON.parse(saved);
+          renderCreators();
+          updateJSONOutput();
+        } catch (e) {
+          console.error('Error loading data:', e);
+          creators = [];
+        }
+      }
+    }
+
+    // Save data to localStorage
+    function saveData() {
+      localStorage.setItem('apostateDirectoryData', JSON.stringify(creators));
+      renderCreators();
+      updateJSONOutput();
+      showSuccess('Data saved successfully!');
+    }
+
+    // Show success message
+    function showSuccess(message) {
+      const successEl = document.getElementById('success-message');
+      successEl.textContent = `✅ ${message}`;
+      successEl.style.display = 'block';
+      setTimeout(() => {
+        successEl.style.display = 'none';
+      }, 3000);
+    }
+
+    // Tab navigation
+    function showTab(tabId) {
+      // Hide all tabs
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      // Remove active class from all nav buttons
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Show selected tab
+      document.getElementById(tabId).classList.add('active');
+      
+      // Add active class to clicked button
+      event.target.classList.add('active');
+    }
+
+    // Add/edit creator form handler
+    document.getElementById('creator-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const creator = {
+        id: editingId || Date.now().toString(),
+        name: document.getElementById('name').value,
+        category: document.getElementById('category').value,
+        language: document.getElementById('language').value,
+        description: document.getElementById('description').value,
+        link: document.getElementById('link').value,
+        badge: document.getElementById('badge').value,
+        new: document.getElementById('isNew').checked
+      };
+
+      if (editingId) {
+        // Update existing creator
+        const index = creators.findIndex(c => c.id === editingId);
+        if (index !== -1) {
+          creators[index] = creator;
+          showSuccess('Creator updated successfully!');
+        }
+        editingId = null;
+        document.querySelector('button[type="submit"]').textContent = '➕ Add Creator';
+      } else {
+        // Add new creator
+        creators.push(creator);
+        showSuccess('Creator added successfully!');
+      }
+
+      saveData();
+      this.reset();
+    });
+
+    // Render creators list
+    function renderCreators() {
+      const list = document.getElementById('creator-list');
+      if (!list) return;
+      
+      list.innerHTML = '';
+      
+      if (creators.length === 0) {
+        list.innerHTML = '<p style="text-align: center; padding: 2rem; color: #9ca3af;">No creators added yet.</p>';
+        return;
+      }
+      
+      creators.forEach(creator => {
+        const div = document.createElement('div');
+        div.className = 'creator-item';
+        div.innerHTML = `
+          <div class="creator-header">
+            <div class="creator-name">${creator.name}</div>
+            <span class="creator-category">${getCategoryName(creator.category)}</span>
+            ${creator.badge ? `<span class="creator-badge ${creator.new ? 'new-badge' : ''}">${creator.badge}</span>` : ''}
+          </div>
+          <p><strong>Language:</strong> ${creator.language}</p>
+          <p><strong>Description:</strong> ${creator.description}</p>
+          <p><strong>Link:</strong> <a href="${creator.link}" target="_blank" style="color: #ec3899;">${creator.link}</a></p>
+          <div class="actions">
+            <button onclick="editCreator('${creator.id}')">✏️ Edit</button>
+            <button onclick="deleteCreator('${creator.id}')" class="secondary">🗑️ Delete</button>
+          </div>
+        `;
+        list.appendChild(div);
+      });
+    }
+
+    // Get category display name
+    function getCategoryName(categoryId) {
+      const categories = {
+        'ex-muslim': 'Ex-Muslim',
+        'christian': 'Christian',
+        'atheist': 'Atheist'
+      };
+      return categories[categoryId] || categoryId;
+    }
+
+    // Edit creator
+    function editCreator(id) {
+      const creator = creators.find(c => c.id === id);
+      if (creator) {
+        document.getElementById('name').value = creator.name;
+        document.getElementById('category').value = creator.category;
+        document.getElementById('language').value = creator.language;
+        document.getElementById('description').value = creator.description;
+        document.getElementById('link').value = creator.link;
+        document.getElementById('badge').value = creator.badge;
+        document.getElementById('isNew').checked = creator.new;
+        
+        editingId = creator.id;
+        document.querySelector('button[type="submit"]').textContent = '💾 Update Creator';
+        
+        showTab('add-creator');
+        
+        // Scroll to form
+        document.getElementById('creator-form').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Delete creator
+    function deleteCreator(id) {
+      if (confirm('Are you sure you want to delete this creator?')) {
+        creators = creators.filter(c => c.id !== id);
+        saveData();
+        showSuccess('Creator deleted successfully!');
+      }
+    }
+
+    // Clear form
+    function clearForm() {
+      document.getElementById('creator-form').reset();
+      editingId = null;
+      document.querySelector('button[type="submit"]').textContent = '➕ Add Creator';
+    }
+
+    // Update JSON output
+    function updateJSONOutput() {
+      const data = {
+        categories: [
+          {
+            "id": "ex-muslim",
+            "title": "Ex-Muslim Voices and Islamic Critics",
+            "icon": "🗣️",
+            "description": "Former Muslims courageously sharing their deconversion journeys, critical analyses of Islamic theology, and providing invaluable support for those questioning their faith. These creators offer personal testimonies, scholarly research, and compassionate communities."
+          },
+          {
+            "id": "christian",
+            "title": "Christian Apologists / Critics of Islam",
+            "icon": "✝️",
+            "description": "Christian content creators engaging in apologetics and comparative religious analysis. These channels provide Christian perspectives on Islamic theology through debates, textual criticism, and interfaith discussions, **These can be BIASED at times**."
+          },
+          {
+            "id": "atheist",
+            "title": "Atheist & Philosophy Channels",
+            "icon": "🧠",
+            "description": "Channels championing secular humanism, philosophical inquiry, and scientific skepticism. These creators promote rational thinking, evidence-based reasoning, and critical examination of all religious claims."
+          }
+        ],
+        creators: creators
+      };
+
+      document.getElementById('json-output').value = JSON.stringify(data, null, 2);
+    }
+
+    // Copy to clipboard
+    function copyToClipboard() {
+      const jsonOutput = document.getElementById('json-output');
+      jsonOutput.select();
+      document.execCommand('copy');
+      showSuccess('JSON copied to clipboard!');
+    }
+
+    // Download JSON file
+    function downloadJSON() {
+      const data = document.getElementById('json-output').value;
+      const blob = new Blob([data], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'creators.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showSuccess('JSON file downloaded!');
+    }
+
+    // Import from JSON
+    function importFromJSON() {
+      const jsonInput = document.getElementById('json-import').value;
+      if (!jsonInput) {
+        alert('Please paste JSON data first.');
+        return;
+      }
+      
+      try {
+        const data = JSON.parse(jsonInput);
+        if (data.creators && Array.isArray(data.creators)) {
+          creators = data.creators;
+          saveData();
+          document.getElementById('json-import').value = '';
+          showSuccess('Data imported successfully!');
+        } else {
+          alert('Invalid JSON format. Make sure it has a "creators" array.');
+        }
+      } catch (e) {
+        alert('Invalid JSON: ' + e.message);
+      }
+    }
+
+    // Load imported JSON
+    function loadImportedJSON() {
+      const sampleData = {
+        categories: [
+          {
+            "id": "ex-muslim",
+            "title": "Ex-Muslim Voices and Islamic Critics",
+            "icon": "🗣️",
+            "description": "Former Muslims courageously sharing their deconversion journeys, critical analyses of Islamic theology, and providing invaluable support for those questioning their faith. These creators offer personal testimonies, scholarly research, and compassionate communities."
+          }
+        ],
+        creators: [
+          {
+            "id": "sample-creator",
+            "category": "ex-muslim",
+            "name": "Sample Creator",
+            "language": "🇬🇧 English",
+            "description": "This is a sample creator for demonstration.",
+            "link": "https://youtube.com/@sample",
+            "badge": "NEW",
+            "new": true
+          }
+        ]
+      };
+      
+      document.getElementById('json-import').value = JSON.stringify(sampleData, null, 2);
+    }
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', initCMS);
+  </script>
+</body>
+              </html>
