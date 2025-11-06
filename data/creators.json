@@ -1,0 +1,834 @@
+{
+  "categories": [
+    {
+      "id": "ex-muslim",
+      "title": "Ex-Muslim Voices and Islamic Critics",
+      "icon": "🗣️",
+      "description": "Former Muslims courageously sharing their deconversion journeys, critical analyses of Islamic theology, and providing invaluable support for those questioning their faith. These creators offer personal testimonies, scholarly research, and compassionate communities."
+    },
+    {
+      "id": "christian",
+      "title": "Christian Apologists / Critics of Islam",
+      "icon": "✝️",
+      "description": "Christian content creators engaging in apologetics and comparative religious analysis. These channels provide Christian perspectives on Islamic theology through debates, textual criticism, and interfaith discussions, **These can be BIASED at times**."
+    },
+    {
+      "id": "atheist",
+      "title": "Atheist & Philosophy Channels",
+      "icon": "🧠",
+      "description": "Channels championing secular humanism, philosophical inquiry, and scientific skepticism. These creators promote rational thinking, evidence-based reasoning, and critical examination of all religious claims."
+    }
+  ],
+  "creators": [
+    {
+      "id": "apostate-aladdin",
+      "category": "ex-muslim",
+      "name": "Apostate Aladdin",
+      "language": "🇬🇧 English",
+      "description": "Engaging debates, Islamic critiques, and ex-Muslim advocacy with humor and sharp, calm analysis.",
+      "link": "https://youtube.com/@apostatealaddin",
+      "badge": "GOATED",
+      "new": false
+    },
+    {
+      "id": "apostate-prophet",
+      "category": "ex-muslim",
+      "name": "Apostate Prophet",
+      "language": "🇬🇧 English",
+      "description": "Detailed critiques of Islamic doctrine, Quranic analysis, and ex-Muslim perspectives.",
+      "link": "https://youtube.com/@apostateprophet",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "friendly-exmuslim",
+      "category": "ex-muslim",
+      "name": "Friendly Ex-Muslim (Abdullah Sameer)",
+      "language": "🇬🇧 English",
+      "description": "Thoughtful discussions on leaving Islam, interfaith dialogues, and rational skepticism.",
+      "link": "https://youtube.com/@friendlyexmuslim",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "hasan-radwan",
+      "category": "ex-muslim",
+      "name": "Hasan Radwan",
+      "language": "🇬🇧 English",
+      "description": "Knowledgable and philosophical explorations of Islamic theology, morality debates, and deconversion stories.",
+      "link": "https://youtube.com/@hassanradwan133",
+      "badge": "GOATED",
+      "new": false
+    },
+    {
+      "id": "masked-arab",
+      "category": "ex-muslim",
+      "name": "Masked Arab",
+      "language": "🇸🇦 Arabic & English Subs",
+      "description": "In-depth historical analysis and critiques of Islamic texts in Arabic, also covers many religions.",
+      "link": "https://youtube.com/@themaskedarab",
+      "badge": "GOATED",
+      "new": false
+    },
+    {
+      "id": "sherif-gaber",
+      "category": "ex-muslim",
+      "name": "Sherif Gaber",
+      "language": "🇪🇬 Arabic (English Subs)",
+      "description": "Egyptian atheist activist known for satirical videos critiquing religion and dogma.",
+      "link": "https://youtube.com/@sherifgaber",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "nabi-asli",
+      "category": "ex-muslim",
+      "name": "Nabi Asli",
+      "language": "🇬🇧 Animated, English",
+      "description": "Animated content exploring Islamic history, theology, and prophet narratives.",
+      "link": "https://youtube.com/@nabiasli1",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "adam-seeker",
+      "category": "ex-muslim",
+      "name": "Adam Seeker",
+      "language": "🇵🇰 Urdu",
+      "description": "Urdu content on atheism, rationalism, and critiques of Islamic teachings.",
+      "link": "https://youtube.com/@adamseekerofficial",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "harris-sultan",
+      "category": "ex-muslim",
+      "name": "Harris Sultan",
+      "language": "🇵🇰 Urdu",
+      "description": "Pakistani ex-Muslim discussing atheism, secularism, and criticism of religious extremism.",
+      "link": "https://youtube.com/@harrissultanatheist",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "ghalib-kamal",
+      "category": "ex-muslim",
+      "name": "Ghalib Kamal",
+      "language": "🇵🇰 Urdu / English",
+      "description": "Debates, critiques, and discussions on Islam from an ex-Muslim perspective.",
+      "link": "https://youtube.com/@theghalibkamal",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "urdu-freethinker",
+      "category": "ex-muslim",
+      "name": "Urdu Free Thinker",
+      "language": "🇵🇰 Urdu (English Subs)",
+      "description": "Rational analysis of Islam and promotion of freethought in Urdu-speaking communities.",
+      "link": "https://youtube.com/@theurdufreethinker",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "cyberpunk-dingo",
+      "category": "ex-muslim",
+      "name": "The Cyberpunk Dingo",
+      "language": "🇬🇧 English",
+      "description": "Ex-Muslim content focusing on Islamic critiques and atheist perspectives.",
+      "link": "https://youtube.com/@thecyberpunkdingo",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "kosay-betar",
+      "category": "ex-muslim",
+      "name": "Kosay Betar",
+      "language": "🇸🇦 Arabic (1 Series English)",
+      "description": "Arabic ex-Muslim creating content on Islamic criticism and secular values.",
+      "link": "https://youtube.com/@kosaybetar",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "kosay-reacts",
+      "category": "ex-muslim",
+      "name": "Kosay Betar Reacts",
+      "language": "🇸🇦 Arabic (Mostly)",
+      "description": "Reaction videos and commentary from Kosay Betar.",
+      "link": "https://youtube.com/@kosayreacts",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "zara-kay",
+      "category": "ex-muslim",
+      "name": "Zara Kay",
+      "language": "🇦🇺 English",
+      "description": "Ex-Muslim activist advocating for women's rights and secular values.",
+      "link": "https://youtube.com/@zarakayk",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "xmoose",
+      "category": "ex-muslim",
+      "name": "Xmoose",
+      "language": "🇬🇧 English",
+      "description": "Humorous takes on Islam, ex-Muslim life, and religious critique.",
+      "link": "https://youtube.com/@xmoose",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "exmna",
+      "category": "ex-muslim",
+      "name": "Ex-Muslims of North America (EXMNA)",
+      "language": "🇺🇸 English",
+      "description": "Community organization supporting ex-Muslims with resources, events, and advocacy.",
+      "link": "https://youtube.com/@exmuslimsorg",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "imtiaz-shams",
+      "category": "ex-muslim",
+      "name": "Imtiaz Shams",
+      "language": "🇬🇧 English",
+      "description": "Ex-Muslim activist discussing secularism, apostasy, and religious reform.",
+      "link": "https://youtube.com/@imtiazshams",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "islam-critiqued",
+      "category": "ex-muslim",
+      "name": "Islam Critiqued",
+      "language": "🇬🇧 English",
+      "description": "Academic-level critiques of Islamic theology and historical analysis.",
+      "link": "https://youtube.com/@islamcritiqued",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "reasoned-answers",
+      "category": "ex-muslim",
+      "name": "Reasoned Answers",
+      "language": "🇬🇧 English",
+      "description": "Logical rebuttals to Islamic apologetics and religious arguments.",
+      "link": "https://youtube.com/@reasonedanswers",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "debate-analyzer",
+      "category": "ex-muslim",
+      "name": "Debate Analyzer",
+      "language": "🇬🇧 English",
+      "description": "Breaking down religious debates and analyzing apologetic arguments.",
+      "link": "https://youtube.com/@debateanalyzer",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "sheikh-itoff",
+      "category": "ex-muslim",
+      "name": "Adventures of Sheikh Itoff",
+      "language": "🇺🇸 English",
+      "description": "Content on deconversion, atheism, and Islamic criticism.",
+      "link": "https://youtube.com/@sheikhitoff",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "adam-elmasri-english",
+      "category": "ex-muslim",
+      "name": "Adam Elmasri (English Channel)",
+      "language": "🇺🇸 English",
+      "description": "Debates and critiques of Islam and religion.",
+      "link": "https://youtube.com/@adamelmasrienglish",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "adam-elmasri-arabic",
+      "category": "ex-muslim",
+      "name": "Adam Elmasri (Arabic Channel)",
+      "language": "🇸🇦 Arabic",
+      "description": "Debates and critiques of Islam for Arabic viewers.",
+      "link": "https://youtube.com/@adamelmasri",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "infidel-noodle",
+      "category": "ex-muslim",
+      "name": "Infidel Noodle",
+      "language": "🇨🇦 English",
+      "description": "Ex-Muslim sharing personal story and critiques of religious doctrine.",
+      "link": "https://youtube.com/@infidelnoodle",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "holy-humanist",
+      "category": "ex-muslim",
+      "name": "Holy Humanist",
+      "language": "🇺🇸 English",
+      "description": "Discussions on secularism, humanism, and religious critique.",
+      "link": "https://youtube.com/@holyhumanist",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "hamed-tv",
+      "category": "ex-muslim",
+      "name": "Hamed.tv",
+      "language": "🇸🇦 Arabic (Some English Subs)",
+      "description": "Critiques of Islam and discussions on secular issues.",
+      "link": "https://youtube.com/@box-of-islam",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "david-rajany",
+      "category": "ex-muslim",
+      "name": "David Rajany",
+      "language": "🇲🇦 Arabic",
+      "description": "Ex-Muslim content focused on debate and critical thinking.",
+      "link": "https://youtube.com/@davidrajany",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "hicham-agnostic",
+      "category": "ex-muslim",
+      "name": "Hicham Agnostic",
+      "language": "🇸🇦 Arabic (Some English Subs)",
+      "description": "Arabic atheist and agnostic content and religious critiques.",
+      "link": "https://youtube.com/@hichamagnostik",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "hesham-elmasry",
+      "category": "ex-muslim",
+      "name": "Hesham El Masry",
+      "language": "🇪🇬 Arabic",
+      "description": "Content on atheism, secularism, and critical thought in Arabic.",
+      "link": "https://youtube.com/@hesham_elmasry",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "secular-spirit",
+      "category": "ex-muslim",
+      "name": "Secular Spirit",
+      "language": "🇺🇸 English",
+      "description": "Promoting secularism and rationalism in various topics.",
+      "link": "https://youtube.com/@secularspirit",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "drastic-measures",
+      "category": "ex-muslim",
+      "name": "Drastic Measures",
+      "language": "🇺🇸 English",
+      "description": "Conversation with Ex-muslims, debunks apologists, and analysis of deconversion.",
+      "link": "https://youtube.com/@drasticmeasuresislam",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "critical-faculty",
+      "category": "ex-muslim",
+      "name": "Critical Faculty",
+      "language": "🇬🇧 English (Some other languages)",
+      "description": "Discussions on philosophy, atheism, and critical examination of belief.",
+      "link": "https://youtube.com/@CriticalFaculty",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "khayyam-translations",
+      "category": "ex-muslim",
+      "name": "Khayyam Translations",
+      "language": "🇬🇧 English",
+      "description": "Focuses on translating and analyzing Persian philosophical and religious texts.",
+      "link": "https://youtube.com/@khayyamtranslations",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "secular-jihadists",
+      "category": "ex-muslim",
+      "name": "Secular Jihadists",
+      "language": "🇺🇸 English",
+      "description": "Podcast and discussions on secularism, human rights, and Islam.",
+      "link": "https://youtube.com/@secularjihadists4037",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "islam-what-they-dont-tell-you",
+      "category": "ex-muslim",
+      "name": "Islam What They Don't Tell You",
+      "language": "🇬🇧 English",
+      "description": "Critically examining aspects of Islamic history and scripture.",
+      "link": "https://youtube.com/@islamwhattheydonttellyou164",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "mohammad-salih",
+      "category": "ex-muslim",
+      "name": "Mohammad Salih",
+      "language": "🇸🇦 Arabic",
+      "description": "Arabic content on atheism and critiques of religion.",
+      "link": "https://youtube.com/@almoukaf-h",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "hewarat-nidal",
+      "category": "ex-muslim",
+      "name": "Hewarat Nidal",
+      "language": "🇸🇦 Arabic",
+      "description": "Interviews and discussions on philosophy and secularism in Arabic.",
+      "link": "https://youtube.com/@hewaratnidal",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "siraj-hayani",
+      "category": "ex-muslim",
+      "name": "Siraj Hayani",
+      "language": "🇸🇦 Arabic (Mostly)",
+      "description": "Discussions and critiques of Islamic theology and doctrine.",
+      "link": "https://youtube.com/@sirajhayani",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "jacklefou",
+      "category": "ex-muslim",
+      "name": "Jacklefou",
+      "language": "🇫🇷 French (Some English)",
+      "description": "Content on atheism, philosophy, and religious criticism.",
+      "link": "https://youtube.com/@jacklefoux",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "veecu-vidz",
+      "category": "ex-muslim",
+      "name": "Veecu Vidz",
+      "language": "🇬🇧 English",
+      "description": "Ex-Muslim comedy, commentary and religious analysis.",
+      "link": "https://youtube.com/@veeduvidz",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "zafar-heretic",
+      "category": "ex-muslim",
+      "name": "Zafar heretic",
+      "language": "🇮🇳 Urdu/hindi",
+      "description": "Zafar Heretic is an Indian ex-Muslim content creator known for his bold, analytical, and intellectually engaging commentary on Islam, religion, and social issues.",
+      "link": "https://youtube.com/@zafarheretic",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "ex-muslim-chronicles",
+      "category": "ex-muslim",
+      "name": "Ex muslim chronicles",
+      "language": "English",
+      "description": "Another ex-muslim insightful creator who makes good videos.",
+      "link": "https://youtube.com/@exmuslimchronicles",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "cemb-forum",
+      "category": "ex-muslim",
+      "name": "CEMB forum",
+      "language": "English",
+      "description": "Detailed Critique of islam, also has some videos by Hasan Radwan.",
+      "link": "https://youtube.com/@cembadmins",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "cira-international",
+      "category": "ex-muslim",
+      "name": "CIRA INTERNATIONAL",
+      "language": "English",
+      "description": "Detailed critique of islam also has discussions.",
+      "link": "https://youtube.com/@cirainternational",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "majid-oukacha",
+      "category": "ex-muslim",
+      "name": "Majid Oukacha",
+      "language": "🇫🇷 French and English",
+      "description": "Detailed critique of islam also has discussions.",
+      "link": "https://youtube.com/@majidoukacha",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "early-history-islam",
+      "category": "ex-muslim",
+      "name": "Early history of Islam",
+      "language": "Arabic",
+      "description": "Discussions on early history of islam.",
+      "link": "https://youtube.com/@earlyhistoryofisalm",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "sam-shamoun",
+      "category": "christian",
+      "name": "Sam Shamoun",
+      "language": "🇺🇸 English",
+      "description": "Detailed Islamic critiques from Christian perspective, debates, and textual analysis.",
+      "link": "https://youtube.com/@shamounian",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "christian-prince",
+      "category": "christian",
+      "name": "Christian Prince",
+      "language": "🇸🇦 Arabic / English",
+      "description": "Arabic-speaking Christian apologist critiquing Islamic texts and engaging in debates.",
+      "link": "https://youtube.com/@christianprince1",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "rob-christian",
+      "category": "christian",
+      "name": "Rob Christian",
+      "language": "🇬🇧 English",
+      "description": "Christian apologetics focusing on comparative religion and Islamic critique.",
+      "link": "https://youtube.com/@robchristian",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "thomas-apologia",
+      "category": "christian",
+      "name": "Thomas Apologia",
+      "language": "🇺🇸 English",
+      "description": "Street preaching and apologetics with focus on Muslim evangelism.",
+      "link": "https://youtube.com/@thomas.apologia",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "godlogic-apologist",
+      "category": "christian",
+      "name": "GodLogic Apologist",
+      "language": "🇺🇸 English",
+      "description": "Christian debates and apologetics with emphasis on logic and reasoning.",
+      "link": "https://youtube.com/@godlogicapologetics",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "godlogic-2",
+      "category": "christian",
+      "name": "GodLogic 2.0",
+      "language": "🇺🇸 English",
+      "description": "2nd channel of god logic, christian apologetics and islam critics.",
+      "link": "https://youtube.com/@godlogic2.0",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "siiig",
+      "category": "christian",
+      "name": "SIIIG",
+      "language": "🇬🇧 English",
+      "description": "Christian apologetics and Islamic critique through debates and discussions.",
+      "link": "https://youtube.com/@siiig1",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "the-archive",
+      "category": "christian",
+      "name": "TheArchive",
+      "language": "🇺🇸 English",
+      "description": "Archiving and analyzing religious debates, particularly Christian-Muslim dialogues.",
+      "link": "https://youtube.com/@thearchive6671",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "towards-jesus",
+      "category": "christian",
+      "name": "Towards Jesus",
+      "language": "🇺🇸 English",
+      "description": "Christian apologetics and outreach to Muslims with theological discussions.",
+      "link": "https://youtube.com/@towardsjesus",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "david-wood",
+      "category": "christian",
+      "name": "David wood",
+      "language": "English",
+      "description": "Christian apologist and critics islam also has debates sometimes.",
+      "link": "https://youtube.com/@thedavidwoodarchives",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "act-17-polemics",
+      "category": "christian",
+      "name": "Act 17 polemics",
+      "language": "English",
+      "description": "More from David Wood.",
+      "link": "https://youtube.com/@acts17polemics",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "apologetics-roadshow",
+      "category": "christian",
+      "name": "Apologetics roadshow.",
+      "language": "English",
+      "description": "Even more from the christian apologist David wood.",
+      "link": "https://youtube.com/@apologeticsroadshow",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "raymond-ibrahim",
+      "category": "christian",
+      "name": "Raymond Ibrahim",
+      "language": "🇺🇸 English",
+      "description": "Content focused on Coptic history, Islamic-Christian relations, and commentary on the Middle East.",
+      "link": "https://youtube.com/@raymondibrahim-hw",
+      "badge": "NEW",
+      "new": true
+    },
+    {
+      "id": "genetically-modified-skeptic",
+      "category": "atheist",
+      "name": "Genetically Modified Skeptic",
+      "language": "🇺🇸 English",
+      "description": "Former Christian discussing atheism, philosophy, and religious deconstruction.",
+      "link": "https://youtube.com/@geneticallymodifiedskeptic",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "theramin-trees",
+      "category": "atheist",
+      "name": "TheraminTrees",
+      "language": "🇬🇧 English",
+      "description": "Animated videos on psychology of belief, manipulation, and critical thinking.",
+      "link": "https://youtube.com/@theramintrees",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "cosmic-skeptic",
+      "category": "atheist",
+      "name": "Cosmic Skeptic",
+      "language": "🇬🇧 English",
+      "description": "Philosophy student exploring atheism, ethics, and rational discourse.",
+      "link": "https://youtube.com/@cosmicskeptic",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "religion-for-breakfast",
+      "category": "atheist",
+      "name": "Religion for Breakfast",
+      "language": "🇺🇸 English",
+      "description": "Academic exploration of world religions, history, and comparative theology.",
+      "link": "https://youtube.com/@religionforbreakfast",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "friendly-atheist",
+      "category": "atheist",
+      "name": "Friendly Atheist",
+      "language": "🇺🇸 English",
+      "description": "News, commentary, and discussions on atheism, secularism, and religious issues.",
+      "link": "https://youtube.com/@friendlyatheist1",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "atheist-experience",
+      "category": "atheist",
+      "name": "The Atheist Experience",
+      "language": "🇺🇸 English",
+      "description": "Live call-in show discussing atheism, religion, and logical reasoning.",
+      "link": "https://youtube.com/@theatheistexperience",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "rationality-rules",
+      "category": "atheist",
+      "name": "Rationality Rules",
+      "language": "🇬🇧 English",
+      "description": "Evidence-based arguments against religious claims and supernatural beliefs.",
+      "link": "https://youtube.com/@rationalityrules",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "thinking-atheist",
+      "category": "atheist",
+      "name": "Thinking Atheist",
+      "language": "🇺🇸 English",
+      "description": "Podcast and videos on atheism, secular living, and critical thinking.",
+      "link": "https://youtube.com/@thethinkingatheist",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "holy-koolaid",
+      "category": "atheist",
+      "name": "Holy Koolaid",
+      "language": "🇺🇸 English",
+      "description": "Humorous critiques of religion, biblical analysis, and secular commentary.",
+      "link": "https://youtube.com/@holykoolaid",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "darkmatter2525",
+      "category": "atheist",
+      "name": "DarkMatter2525",
+      "language": "🇺🇸 English",
+      "description": "Animated satirical content roasting religious concepts and beliefs.",
+      "link": "https://youtube.com/@darkmatter2525",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "belief-it-or-not",
+      "category": "atheist",
+      "name": "Belief It or Not",
+      "language": "🇺🇸 English",
+      "description": "Street epistemology and conversations about belief and reasoning.",
+      "link": "https://youtube.com/@beliefitornot",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "logicked",
+      "category": "atheist",
+      "name": "Logicked",
+      "language": "🇺🇸 English",
+      "description": "Debunking apologetics and analyzing religious arguments with logic.",
+      "link": "https://youtube.com/@logicked",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "aaron-ra",
+      "category": "atheist",
+      "name": "Aaron Ra",
+      "language": "🇺🇸 English",
+      "description": "Evolutionary biology, atheism activism, and debunking creationism.",
+      "link": "https://youtube.com/@aronra",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "paulogia",
+      "category": "atheist",
+      "name": "Paulogia",
+      "language": "🇨🇦 English",
+      "description": "Analyzing apologetics, biblical claims, and promoting skepticism.",
+      "link": "https://youtube.com/@paulogia",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "forrest-valkai",
+      "category": "atheist",
+      "name": "Forrest Valkai",
+      "language": "🇺🇸 English",
+      "description": "Biology educator debunking creationism and promoting science literacy.",
+      "link": "https://youtube.com/@renegadescienceteacher",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "potholer54",
+      "category": "atheist",
+      "name": "Potholer54",
+      "language": "🇬🇧 English",
+      "description": "Science journalism debunking climate denial and creationist claims.",
+      "link": "https://youtube.com/@potholer54",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "mythvision",
+      "category": "atheist",
+      "name": "MythVision",
+      "language": "🇺🇸 English",
+      "description": "Biblical scholarship, historical Jesus research, and religious studies.",
+      "link": "https://youtube.com/@mythvisionpodcast",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "viced-rhino",
+      "category": "atheist",
+      "name": "Viced Rhino",
+      "language": "🇬🇧 English",
+      "description": "Debunking pseudoscience, conspiracy theories, and religious apologetics.",
+      "link": "https://youtube.com/@vicedrhino",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "lets-talk-religion",
+      "category": "atheist",
+      "name": "Let's Talk Religion",
+      "language": "🇸🇪 English",
+      "description": "Academic deep dives into world religions, mysticism, and religious history.",
+      "link": "https://youtube.com/@letstalkreligion",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "atheist-republic",
+      "category": "atheist",
+      "name": "Atheist Republic",
+      "language": "🇺🇸 English",
+      "description": "Global atheist community promoting secularism and freethought worldwide.",
+      "link": "https://youtube.com/@atheistrepublic",
+      "badge": "",
+      "new": false
+    },
+    {
+      "id": "emma-thorne",
+      "category": "atheist",
+      "name": "Emma Thorne",
+      "language": "🇬🇧 English",
+      "description": "Focuses on philosophical and ethical discussions from a secular perspective.",
+      "link": "https://youtube.com/@emmathornevideos",
+      "badge": "NEW",
+      "new": true
+    }
+  ]
+}
